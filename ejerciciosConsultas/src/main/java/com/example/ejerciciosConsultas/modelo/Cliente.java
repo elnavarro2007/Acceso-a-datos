@@ -9,8 +9,6 @@ import java.util.List;
 
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 public class Cliente {
@@ -26,8 +24,19 @@ public class Cliente {
     private String telefono;
 
 
-    @OneToMany
+    @OneToMany(mappedBy = "cliente")
     private List<Coche> coches = new ArrayList<>();
 
 
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nif='" + nif + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
 }

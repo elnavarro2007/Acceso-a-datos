@@ -8,8 +8,6 @@ import java.util.List;
 
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 public class Coche {
@@ -27,9 +25,20 @@ public class Coche {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    // ponerle el atributo de revision, que se llama coche
+    // ponerle el atributo de revision, que se llama coche y asi no se generan tablas intermedias
     @OneToMany ( mappedBy = "coche")
     private List<Revision> revisionList = new ArrayList<>();
 
-
+    @Override
+    public String toString() {
+        return "Coche{" +
+                "matricula='" + matricula + '\'' +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", color='" + color + '\'' +
+                ", precio=" + precio +
+                ", cliente=" + cliente.getNombre() +
+                ", revisionList=" + revisionList +
+                '}';
+    }
 }

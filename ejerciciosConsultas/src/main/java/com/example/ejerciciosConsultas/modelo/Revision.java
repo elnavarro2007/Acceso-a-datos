@@ -26,4 +26,14 @@ public class Revision {
     @JoinColumn(name = "coche_id")
     private Coche coche;
 
+    @Override
+    public String toString() {
+        return "Revision{" +
+                "codigo='" + codigo + '\'' +
+                ", cambio_filtro=" + cambio_filtro +
+                ", cambio_aceite=" + cambio_aceite +
+                ", coste=" + coste +
+                ", coche=" + coche.getMarca() +
+                '}';
+    }
 }
