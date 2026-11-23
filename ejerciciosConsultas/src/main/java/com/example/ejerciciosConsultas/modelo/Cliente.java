@@ -1,11 +1,11 @@
 package com.example.ejerciciosConsultas.modelo;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -24,6 +24,10 @@ public class Cliente {
     private String direccion;
     private String ciudad;
     private String telefono;
+
+
+    @OneToMany
+    private List<Coche> coches = new ArrayList<>();
 
 
 }

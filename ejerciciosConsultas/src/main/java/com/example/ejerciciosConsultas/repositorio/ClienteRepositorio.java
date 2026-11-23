@@ -10,6 +10,6 @@ import java.util.List;
 public interface ClienteRepositorio extends JpaRepository<Cliente,Long> {
 
 
-    List<Cliente> clientesCocheconColor(String color);
+    List<Cliente> findByCochesColor(String color);
 
 }

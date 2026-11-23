@@ -3,6 +3,8 @@ package com.example.ejerciciosConsultas.modelo;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -25,6 +27,9 @@ public class Coche {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
+    // ponerle el atributo de revision, que se llama coche
+    @OneToMany ( mappedBy = "coche")
+    private List<Revision> revisionList = new ArrayList<>();
 
 
 }
