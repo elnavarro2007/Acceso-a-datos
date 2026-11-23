@@ -34,7 +34,13 @@ public class EjerciciosConsultasApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// Ej1 
+		// Ej1
 		System.out.println(consultasServicio.clientesPorColor("Maroon"));
+
+		// Ej2
+		System.out.println(consultasServicio.clientePorPrecioMayorQue(5000));
+
+		// Ej3
+		System.out.println(consultasServicio.clientesConMasCoches());
 	}
 }

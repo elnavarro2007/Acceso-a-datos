@@ -20,4 +20,14 @@ public class ConsultasServicio {
 
         return  clienteRepositorio.findByCochesColor(color);
     }
+
+    public List<Cliente> clientePorPrecioMayorQue(int  dinero) {
+
+        return  clienteRepositorio.findByCochesPrecioGreaterThan(dinero);
+    }
+
+    public List<Cliente> clientesConMasCoches() {
+
+        return clienteRepositorio.
+    }
 }
